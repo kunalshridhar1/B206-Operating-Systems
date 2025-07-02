@@ -1,120 +1,106 @@
-# 🖥️ Java Operating Systems Simulator
+Python-Based Messaging Application
 
-This project simulates key components of an operating system, including **process scheduling**, **memory management**, and **system performance metrics** using Java.
+A comprehensive messaging application using Python and a client-server architecture that supports real-time text messaging, secure file transfers, user authentication, and contact management.
 
----
+🚀 Features
 
-## Features
+Real-time text communication
 
-- ✅ **Process Scheduling Algorithms**
-  - FCFS (First-Come-First-Served)
-  - SJF (Shortest Job First - Non-preemptive)
-  - Round Robin (Preemptive with time quantum)
+File and photo transfer between users
 
-- ✅ **Memory Allocation Techniques**
-  - First-Fit
-  - Best-Fit
+Secure user registration and login (bcrypt + SQLite)
 
-- ✅ **System Metrics**
-  - Waiting Time
-  - Turnaround Time
-  - CPU Time Tracking (optional)
-  - Memory Allocation Summary
+Contact management (add/list/remove)
 
-- ✅ **Command Line Interface**
-  - Simple CLI to enter process info and choose strategies
+Configuration via config.json
 
----
+Modular and maintainable codebase
 
-## 🛠️ How to Compile & Run
+📁 Project Structure
 
-### 🧑‍💻 Requirements
-- Java JDK 17 or higher
-- VS Code or any Java IDE (IntelliJ, Eclipse, etc.)
+├── client.py          # Client-side logic and command-line interface
+├── server.py          # Server handling client connections and routing
+├── database.py        # User authentication and contact management
+├── config.json        # Configuration file (host and port)
+├── README.md          # Project overview and instructions
 
-### 🔧 Compile
-```bash
-javac *.java
+⚙️ Requirements
 
+Python 3.10+
 
+bcrypt
 
-▶️ Run
+SQLite3 (built-in with Python)
 
-    java Main
+Install bcrypt:
 
+pip install bcrypt
 
+🔧 Setup Instructions
 
-📥 Sample Input
+1. Clone the Repository
 
-    Enter number of processes: 3
+git clone https://github.com/kunalshridhar1/B206-Operating-Systems.git
+cd messaging-app
 
-    Process 1
-    Arrival Time: 0
-    Burst Time: 5
-    Memory Required: 10
+2. Configure Host and Port
 
-    Process 2
-    Arrival Time: 1
-    Burst Time: 3
-    Memory Required: 15
+Edit config.json:
 
-    Process 3
-    Arrival Time: 2
-    Burst Time: 1
-    Memory Required: 5
+{
+  "host": "127.0.0.1",
+  "port": 5000
+}
 
-    Choose Scheduling (fcfs/sjf/rr): sjf
-    Choose Memory Allocation (first/best): best
+3. Run the Server
 
+python server.py
 
-📤 Sample Output
+4. Run the Client (in a new terminal)
 
-    Results:
-    PID 1: Waiting = 4, Turnaround = 9
-    PID 2: Waiting = 0, Turnaround = 3
-    PID 3: Waiting = 2, Turnaround = 3
+python client.py
 
-    Average Waiting Time: 2.00
-    Average Turnaround Time: 5.00
+🧪 Sample Commands (Client)
 
+/addcontact <username> – Add a contact
 
-📦 Project Structure
-    .
-    ├── Main.java              # CLI + project controller
-    ├── Process.java           # Process class definition
-    ├── Scheduler.java         # FCFS, SJF, RR scheduling
-    ├── MemoryManager.java     # First-Fit / Best-Fit allocator
-    ├── Metrics.java           # Utility for system statistics
+/listcontacts – Show saved contacts
 
+/removecontact <username> – Remove contact
 
+/sendfile <username> <filepath> – Send a file
 
-📘 Concepts Implemented 
+exit – Disconnect from the server
 
-    🧠 OS Scheduling Algorithms
+📦 Functional Overview
 
-    📦 Dynamic Memory Allocation
+Authentication: Passwords are hashed with bcrypt before storing in SQLite.
 
-    📊 System Metrics Tracking
+Messaging: JSON-based protocol over TCP sockets.
 
-    🧾 Queue Management & CPU Simulation
+File Transfer: Sends metadata + binary stream to the server.
 
-    🧑‍💻 Interactive CLI Input
+Contact List: SQLite-based, linked to the user account.
 
+Config Management: Easily switch between localhost or LAN IP.
 
+📌 Future Enhancements
 
-📌 Future Enhancements 
- 
-    ✅ Gantt Chart Output
+GUI with Tkinter or PyQt
 
-    ✅ File-based input/output
+End-to-end encryption (RSA/AES)
 
-    🔄 Preemptive SJF
+Offline message support
 
-    📈 CPU utilization % and memory usage stats
+Group chats
 
+Dockerized deployment
 
+📄 License
 
-👨‍💻 Author
+This project is for educational and demonstration purposes only.
+
+✍️ Author
 Kunal Shridhar
-📧 shridharkunal2005@gmail.com
-🔗 GitHub:kunalshridhar1
+Mail id: shridharkunal2005@gmail.com
+
