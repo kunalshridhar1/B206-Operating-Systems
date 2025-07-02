@@ -1,4 +1,4 @@
-Python-Based Messaging Application
+**Python-Based Messaging Application**
 
 A comprehensive messaging application using Python and a client-server architecture that supports real-time text messaging, secure file transfers, user authentication, and contact management.
 
@@ -40,7 +40,7 @@ pip install bcrypt
 
 1. Clone the Repository
 
-git clone https://github.com/kunalshridhar1/B206-Operating-Systems.git
+git clone https://github.com/kunalshridhar1/B206-Operating-Systems.git 
 cd messaging-app
 
 2. Configure Host and Port
