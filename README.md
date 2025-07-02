@@ -18,7 +18,7 @@ This project simulates key components of an operating system, including **proces
 - ✅ **System Metrics**
   - Waiting Time
   - Turnaround Time
-  - CPU Time Tracking (optional)
+  - CPU Time Tracking 
   - Memory Allocation Summary
 
 - ✅ **Command Line Interface**
